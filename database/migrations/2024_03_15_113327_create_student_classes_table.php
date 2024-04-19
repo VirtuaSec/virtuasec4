@@ -12,6 +12,10 @@ return new class extends Migration {
     {
         Schema::create('student_classes', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('curse_id');
+            $table->integer('limit');
+            $table->foreign('curse_id')->references('id')->on('curses');
             $table->timestamps();
         });
     }

@@ -33,4 +33,4 @@ RUN mkdir -p /var/www/storage/logs/
 RUN useradd ${USER}
 #RUN php artisan storage:link
 #RUN mkdir /home/${USER} && mkdir /home/${USER}/.config && chmod -R 777 /home/${USER}/.config
-#USER ${USER}
+USER ${USER}

@@ -40,8 +40,7 @@ class DisciplineResource extends Resource
                         name: 'curse',
                         titleAttribute: 'name',
                     )
-                    ->getOptionLabelUsing(fn(Model $record) => "adasd {$record->ambit->name} - {$record->name}")
-                ,
+                    ->getOptionLabelFromRecordUsing(fn(Model $record) => "{$record->ambit->name} - {$record->name}")
             ]);
     }
 
