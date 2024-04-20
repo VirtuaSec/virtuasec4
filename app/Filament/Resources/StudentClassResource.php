@@ -3,8 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\StudentClassResource\Pages;
-use App\Filament\Resources\StudentClassResource\RelationManagers;
-use App\Filament\Resources\StudentClassUserResource\RelationManagers\StudentClassesRelationManager;
 use App\Models\StudentClass;
 use App\Models\User;
 use Filament\Tables\Actions\ActionGroup;
@@ -68,6 +66,7 @@ class StudentClassResource extends Resource
                     Tables\Actions\Action::make('view-students')
                         ->label('Visualizar alunos')
                         ->url(fn ($record): string => route('filament.admin.resources.student-classes.students', $record))
+                    ->icon('heroicon-s-eye')
 
 
                 ])->label('Opções')
