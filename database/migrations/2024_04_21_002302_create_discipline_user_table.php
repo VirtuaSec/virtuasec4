@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('curse_discipline', function (Blueprint $table) {
+        Schema::create('discipline_user', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('discipline_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('curse_discipline');
+        Schema::dropIfExists('discipline_user');
     }
 };

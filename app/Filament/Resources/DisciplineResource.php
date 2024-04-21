@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\DisciplineResource\Pages;
+use App\Filament\Resources\DisciplineTeacherResource\RelationManagers\UsersRelationManager;
 use App\Models\Discipline;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -65,7 +66,7 @@ class DisciplineResource extends Resource
     public static function getRelations(): array
     {
         return [
-
+            UsersRelationManager::class,
         ];
     }
 

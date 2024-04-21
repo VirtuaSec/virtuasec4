@@ -15,4 +15,9 @@ class Discipline extends Model
     {
         return $this->belongsTo(Curse::class);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

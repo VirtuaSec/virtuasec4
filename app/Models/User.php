@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');
     }
+
+    public function disciplines()
+    {
+        return $this->belongsToMany(Discipline::class);
+    }
 }

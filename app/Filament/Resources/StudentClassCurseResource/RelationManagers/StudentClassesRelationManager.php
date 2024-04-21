@@ -43,11 +43,12 @@ class StudentClassesRelationManager extends RelationManager
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+
             ])
             ->actions([
                 Tables\Actions\Action::make('Alunos')->url(fn($record) => route('filament.admin.resources.student-classes.students', $record)),
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('Editar')->url(fn($record) => route('filament.admin.resources.student-classes.edit', $record)),
+
                // Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([

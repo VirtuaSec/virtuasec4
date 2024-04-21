@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CurseResource\RelationManagers;
 
+use App\Models\Discipline;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
@@ -44,8 +45,10 @@ class CurseRelationManager extends RelationManager
                 Tables\Actions\CreateAction::make(),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->url(fn($record) => route('filament.admin.resources.disciplines.edit', $record)),
+
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
