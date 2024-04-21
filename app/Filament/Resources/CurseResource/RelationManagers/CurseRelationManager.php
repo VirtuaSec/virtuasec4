@@ -10,7 +10,15 @@ use Filament\Tables\Table;
 
 class CurseRelationManager extends RelationManager
 {
-    protected static string $relationship = 'curse';
+    protected static ?string $label = 'Disciplina';
+    protected static ?string $pluralLabel = 'Disciplinas';
+    protected static ?string $title = 'Disciplinas';
+    protected static string $relationship = 'disciplines';
+
+    protected function getTableRecordUrlUsing(): ?\Closure
+    {
+        return null;
+    }
 
     public function form(Form $form): Form
     {
@@ -43,6 +51,6 @@ class CurseRelationManager extends RelationManager
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])->recordAction(null);
     }
 }

@@ -3,6 +3,8 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CurseResource\Pages;
+use App\Filament\Resources\CurseResource\RelationManagers\CurseRelationManager;
+use App\Filament\Resources\StudentClassCurseResource\RelationManagers\StudentClassesRelationManager;
 use App\Models\Ambit;
 use App\Models\Curse;
 use Filament\Forms;
@@ -57,7 +59,8 @@ class CurseResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CurseRelationManager::class,
+            StudentClassesRelationManager::class
         ];
     }
 

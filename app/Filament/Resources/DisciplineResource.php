@@ -2,9 +2,7 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CurseResource\RelationManagers\CurseRelationManager;
 use App\Filament\Resources\DisciplineResource\Pages;
-use App\Filament\Resources\DisciplineResource\RelationManagers;
 use App\Models\Discipline;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -67,7 +65,7 @@ class DisciplineResource extends Resource
     public static function getRelations(): array
     {
         return [
-            CurseRelationManager::class,
+
         ];
     }
 

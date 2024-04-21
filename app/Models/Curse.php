@@ -20,4 +20,9 @@ class Curse extends Model
     {
         return $this->hasMany(Discipline::class);
     }
+
+    public function studentClasses()
+    {
+        return $this->hasMany(StudentClass::class);
+    }
 }
